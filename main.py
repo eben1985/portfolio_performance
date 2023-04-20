@@ -6,6 +6,7 @@ import numpy as np
 
 st.header('Portfolio Performance for ETFs')
 st.write("Created by: Eben Opperman for the Australian Institute of Business (AIB)")
+st.info('Please use sidebar to enter ticker symbol. If sidebar is not showing expand it by using the ">" in the left top corner.')
 st.divider()
 
 with st.sidebar:
