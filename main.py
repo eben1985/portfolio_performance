@@ -101,21 +101,26 @@ if mr > 0:
     print(mrm)
 
     sharp_m = ((er-rfrm)/stdev).round(5)
-    print(er)
-    print(sharp_m)
-    treynor_m = ((er - rfrm)/(beta3Year)).round(5) 
-    jensen_m = (er-(rfrm+(beta3Year*(mrm-rfrm)))).round(5)
+    # print('___')
+    # print(er)
+    # print(rfrm)
+    # print(beta3Year)
+    # print(sharp_m)
+    # print('___')
+    treynor_m = (((er - rfrm)/100)/(beta3Year)).round(5) 
+
+    jensen_m = ((er-(rfrm+(beta3Year*(mrm-rfrm))))/100).round(5)
 
 
     colll1, colll2, colll3 = st.columns(3)
     with colll1:
-        st.metric('Sharp measure explination', sharp_m)
+        st.metric('Sharp measure', sharp_m)
     with colll2:
         st.metric('Treynor measure', treynor_m)
     with colll3:
         st.metric('Jensens measure', jensen_m)
 
-    st.subheader("Explinations")
+    st.subheader("Explanations")
     with st.expander("Sharp Measure"):
         st.latex(r'''\text{Sharpe Ratio} = \frac{R_p - R_f}{\sigma_p} ''')
         st.write("""
@@ -148,6 +153,7 @@ if mr > 0:
     """)
 st.divider()
 st.write("All Rights Reserved © Eben Opperman v0.1 (20 April 2023)")
+
 
 
 
